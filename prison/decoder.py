@@ -2,7 +2,7 @@
 
 import re
 
-from constants import NEXT_ID_RE, WHITESPACE
+from .constants import NEXT_ID_RE, WHITESPACE
 
 
 class ParserException(Exception):

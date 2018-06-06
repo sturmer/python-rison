@@ -1,20 +1,20 @@
 # python-rison
 
-Python version of the rison encoder/decoder originally taken from http://mjtemplate.org/examples/rison.html
+Python version of the rison encoder/decoder originally taken from http://mjtemplate.org/examples/rison.html, and forked from https://github.com/pifantastic/python-rison.
 
 ## Usage
 
 ```python
-import rison
+import prison
 
-print rison.dumps({'foo': 'bar'})  # '(foo:bar)'
+print prison.dumps({'foo': 'bar'})  # '(foo:bar)'
 
-print rison.loads('(foo:bar)')  # {'foo': 'bar'}
+print prison.loads('(foo:bar)')  # {'foo': 'bar'}
 ```
 
 ## Tests
 
-```
-pip install nose
-nosetests tests/*.py
+```bash
+$ pip install nose
+$ nosetests
 ```
