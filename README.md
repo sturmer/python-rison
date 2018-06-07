@@ -139,28 +139,28 @@ These examples compare Rison and JSON representations of identical values.
 
 | Rison | JSON | URI-encoded Rison | URI-encoded JSON | Roundtrip test | Compression |
 | --- | --- | --- | --- | --- | --- |
-| (a:0,b:1) | {"a": 0, "b": 1} | (a:0,b:1) | %7B%22a%22:+0,+%22b%22:+1%7D | ok | 67.85714285714286 |
-| (a:0,b:foo,c:'23skidoo') | {"a": 0, "b": "foo", "c": "23skidoo"} | (a:0,b:foo,c:'23skidoo') | %7B%22a%22:+0,+%22b%22:+%22foo%22,+%22c%22:+%2223skidoo%22%7D | ok | 60.65573770491803 |
-| !t | true | !t | true | ok | 50.0 |
-| 1.5 | 1.5 | 1.5 | 1.5 | ok | 0.0 |
-| -3 | -3 | -3 | -3 | ok | 0.0 |
-| 1e30 | 1e+30 | 1e30 | 1e%2B30 | ok | 42.85714285714286 |
-| 1e-30 | 1e-30 | 1e-30 | 1e-30 | ok | 0.0 |
-| a | "a" | a | %22a%22 | ok | 85.71428571428572 |
-| '0a' | "0a" | '0a' | %220a%22 | ok | 50.0 |
-| 'abc def' | "abc def" | %27abc+def%27 | %22abc+def%22 | ok | 0.0 |
-| (a:0) | {"a": 0} | (a:0) | %7B%22a%22:+0%7D | ok | 68.75 |
-| (id:!n,type:/common/document) | {"id": null, "type": "/common/document"} | (id:!n,type:/common/document) | %7B%22id%22:+null,+%22type%22:+%22/common/document%22%7D | ok | 48.21428571428571 |
-| !(!t,!f,!n,'') | [true, false, null, ""] | !(!t,!f,!n,'') | %5Btrue,+false,+null,+%22%22%5D | ok | 54.83870967741935 |
-| '-h' | "-h" | '-h' | %22-h%22 | ok | 50.0 |
-| a-z | "a-z" | a-z | %22a-z%22 | ok | 66.66666666666667 |
-| 'wow!!' | "wow!" | 'wow!!' | %22wow%21%22 | ok | 41.666666666666664 |
-| domain.com | "domain.com" | domain.com | %22domain.com%22 | ok | 37.5 |
-| 'user@domain.com' | "user@domain.com" | 'user@domain.com' | %22user@domain.com%22 | ok | 19.047619047619047 |
-| 'US $10' | "US $10" | %27US+$10%27 | %22US+$10%22 | ok | 0.0 |
-| 'can!'t' | "can't" | 'can!'t' | %22can%27t%22 | ok | 38.46153846153846 |
-| 'Control-F: ' | "Control-F: \u0006" | %27Control-F:+%06%27 | %22Control-F:+%5Cu0006%22 | ok | 19.999999999999996 |
-| 'Unicode: ௫' | "Unicode: \u0beb" | %27Unicode:+%E0%AF%AB%27 | %22Unicode:+%5Cu0beb%22 | ok | -4.347826086956519 |
+| `(a:0,b:1)` | `{"a": 0, "b": 1}` | `(a:0,b:1)` | `%7B%22a%22:+0,+%22b%22:+1%7D` | ok | 67.86% |
+| `(a:0,b:foo,c:'23skidoo')` | `{"a": 0, "b": "foo", "c": "23skidoo"}` | `(a:0,b:foo,c:'23skidoo')` | `%7B%22a%22:+0,+%22b%22:+%22foo%22,+%22c%22:+%2223skidoo%22%7D` | ok | 60.66% |
+| `!t` | `true` | `!t` | `true` | ok | 50.00% |
+| `1.5` | `1.5` | `1.5` | `1.5` | ok | 0.00% |
+| `-3` | `-3` | `-3` | `-3` | ok | 0.00% |
+| `1e30` | `1e+30` | `1e30` | `1e%2B30` | ok | 42.86% |
+| `1e-30` | `1e-30` | `1e-30` | `1e-30` | ok | 0.00% |
+| `a` | `"a"` | `a` | `%22a%22` | ok | 85.71% |
+| `'0a'` | `"0a"` | `'0a'` | `%220a%22` | ok | 50.00% |
+| `'abc def'` | `"abc def"` | `%27abc+def%27` | `%22abc+def%22` | ok | 0.00% |
+| `(a:0)` | `{"a": 0}` | `(a:0)` | `%7B%22a%22:+0%7D` | ok | 68.75% |
+| `(id:!n,type:/common/document)` | `{"id": null, "type": "/common/document"}` | `(id:!n,type:/common/document)` | `%7B%22id%22:+null,+%22type%22:+%22/common/document%22%7D` | ok | 48.21% |
+| `!(!t,!f,!n,'')` | `[true, false, null, ""]` | `!(!t,!f,!n,'')` | `%5Btrue,+false,+null,+%22%22%5D` | ok | 54.84% |
+| `'-h'` | `"-h"` | `'-h'` | `%22-h%22` | ok | 50.00% |
+| `a-z` | `"a-z"` | `a-z` | `%22a-z%22` | ok | 66.67% |
+| `'wow!!'` | `"wow!"` | `'wow!!'` | `%22wow%21%22` | ok | 41.67% |
+| `domain.com` | `"domain.com"` | `domain.com` | `%22domain.com%22` | ok | 37.50% |
+| `'user@domain.com'` | `"user@domain.com"` | `'user@domain.com'` | `%22user@domain.com%22` | ok | 19.05% |
+| `'US $10'` | `"US $10"` | `%27US+$10%27` | `%22US+$10%22` | ok | 0.00% |
+| `'can!'t'` | `"can't"` | `'can!'t'` | `%22can%27t%22` | ok | 38.46% |
+| `'Control-F: '` | `"Control-F: \u0006"` | `%27Control-F:+%06%27` | `%22Control-F:+%5Cu0006%22` | ok | 20.00% |
+| `'Unicode: ௫'` | `"Unicode: \u0beb"` | `%27Unicode:+%E0%AF%AB%27` | `%22Unicode:+%5Cu0beb%22` | ok | -4.35% |
 
 The compression ratio column shows (1 - encoded_rison_size) / encoded_json_size.
 
