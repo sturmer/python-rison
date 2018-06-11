@@ -162,7 +162,7 @@ These examples compare Rison and JSON representations of identical values.
 | `'Control-F: '` | `"Control-F: \u0006"` | `%27Control-F:+%06%27` | `%22Control-F:+%5Cu0006%22` | ok | 20.00% |
 | `'Unicode: ௫'` | `"Unicode: \u0beb"` | `%27Unicode:+%E0%AF%AB%27` | `%22Unicode:+%5Cu0beb%22` | ok | -4.35% |
 
-The compression ratio column shows (1 - encoded_rison_size) / encoded_json_size.
+The compression ratio column shows (1 - encoded_rison_size / encoded_json_size).
 
 On a log of Freebase mqlread service URIs, the queries were from 35% to 45% smaller when encoded with Rison.
 
