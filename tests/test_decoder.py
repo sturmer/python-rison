@@ -1,6 +1,9 @@
 import unittest
 
-from .context import prison
+try:
+    import prison
+except ImportError:
+    from .context import prison
 
 
 class TestDecoder(unittest.TestCase):
