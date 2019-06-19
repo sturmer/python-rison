@@ -18,7 +18,6 @@ EMAIL = 'beto@dealmeida.net'
 AUTHOR = 'Beto Dealmeida'
 
 REQUIRED = [
-    'requests',
     'six',
 ]
 
